@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -14,7 +15,6 @@ export default function Footer() {
             <h2 className="text-[#3b82f6] font-black text-xl mb-4">
               FOSFORGE
             </h2>
-
             <p className="text-[#64748b] leading-7 text-sm">
               Pioneering the digital frontier through innovative software
               development and futuristic design.
@@ -23,10 +23,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-bold text-[#0f172a] mb-5">
-              Services
-            </h3>
-
+            <h3 className="text-sm font-bold text-[#0f172a] mb-5">Services</h3>
             <div className="flex flex-col gap-3 text-sm text-[#64748b]">
               <Link href="#">Web Development</Link>
               <Link href="#">Mobile Apps</Link>
@@ -37,10 +34,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-bold text-[#0f172a] mb-5">
-              Company
-            </h3>
-
+            <h3 className="text-sm font-bold text-[#0f172a] mb-5">Company</h3>
             <div className="flex flex-col gap-3 text-sm text-[#64748b]">
               <Link href="#">About</Link>
               <Link href="#">Projects</Link>
@@ -51,22 +45,27 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h3 className="text-sm font-bold text-[#0f172a] mb-5">
-              Connect
-            </h3>
-
+            <h3 className="text-sm font-bold text-[#0f172a] mb-5">Connect</h3>
             <div className="flex gap-4 text-[#64748b]">
-              <div className="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center">
-                ✦
-              </div>
 
-              <div className="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center">
-                ✦
-              </div>
+              {/* GitHub */}
+              <Link
+                href="#"
+                className="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center hover:border-gray-400 hover:text-[#0f172a] transition-colors"
+                aria-label="GitHub"
+              >
+                <FaGithub size={18} />
+              </Link>
 
-              <div className="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center">
-                ✦
-              </div>
+              {/* LinkedIn */}
+              <Link
+                href="#"
+                className="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center hover:border-gray-400 hover:text-[#0f172a] transition-colors"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin size={18} />
+              </Link>
+
             </div>
           </div>
         </div>
@@ -76,7 +75,6 @@ export default function Footer() {
           <p className="text-[#94a3b8] text-sm">
             © 2026 FOSFORGE DIGITAL. All rights reserved.
           </p>
-
           <div className="flex gap-6 text-sm text-[#64748b]">
             <Link href="#">Privacy</Link>
             <Link href="#">Terms</Link>
