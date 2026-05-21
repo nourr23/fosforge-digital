@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { IconArrowRight } from "@/app/home/icons";
-import { LANDING_WIDE } from "@/app/home/landingLayout";
+import { IconArrowRight } from "@/components/homeScreen/icons";
+import { LANDING_WIDE } from "@/components/homeScreen/landingLayout";
 
 export function CtaSection() {
   return (

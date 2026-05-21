@@ -6,8 +6,8 @@ import {
   IconCpu,
   IconMobile,
   IconPalette,
-} from "@/app/home/icons";
-import { LANDING_WIDE } from "@/app/home/landingLayout";
+} from "@/components/homeScreen/icons";
+import { LANDING_WIDE } from "@/components/homeScreen/landingLayout";
 
 type Accent = "blue" | "teal" | "green" | "orange" | "indigo" | "sky";
 

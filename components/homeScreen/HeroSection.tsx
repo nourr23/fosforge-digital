@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import avatar1 from "@/app/assets/avatar1.jpg";
-import avatar2 from "@/app/assets/avatar2.jpg";
-import avatar3 from "@/app/assets/avatar3.jpg";
-import avatar4 from "@/app/assets/avatar4.jpg";
+import avatar1 from "@/public/avatar1.jpg";
+import avatar2 from "@/public/avatar2.jpg";
+import avatar3 from "@/public/avatar3.jpg";
+import avatar4 from "@/public/avatar4.jpg";
 
 const avatars = [avatar1, avatar2, avatar3, avatar4] as const;
 

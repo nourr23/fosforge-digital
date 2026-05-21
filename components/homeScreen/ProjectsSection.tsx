@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IconPhoto } from "@/app/home/icons";
-import { LANDING_WIDE } from "@/app/home/landingLayout";
-import projectAnalytics from "@/app/assets/projectAnalytics.jpg";
-import projectWarehouse from "@/app/assets/projectWarehouse.jpg";
+import { IconPhoto } from "@/components/homeScreen/icons";
+import { LANDING_WIDE } from "@/components/homeScreen/landingLayout";
+import projectAnalytics from "@/public/projectAnalytics.jpg";
+import projectWarehouse from "@/public/projectWarehouse.jpg";
 
 export function ProjectsSection() {
   return (

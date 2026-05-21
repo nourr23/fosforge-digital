@@ -1,4 +1,4 @@
-import { LANDING_WIDE } from "@/app/home/landingLayout";
+import { LANDING_WIDE } from "@/components/homeScreen/landingLayout";
 
 const stats = [
   { value: "250+", label: "Projects Completed", color: "#3b82f6" },

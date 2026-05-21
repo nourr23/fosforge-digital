@@ -1,7 +1,7 @@
-import { IconCpu, IconGlobe, IconLightning, IconShield } from "@/app/home/icons";
-import { LANDING_WIDE } from "@/app/home/landingLayout";
+import { IconCpu, IconGlobe, IconLightning, IconShield } from "@/components/homeScreen/icons";
+import { LANDING_WIDE } from "@/components/homeScreen/landingLayout";
 import Image from "next/image";
-import aboutImage from "@/app/assets/aboutImage.png";
+import aboutImage from "@/public/aboutImage.png";
 const features = [
   { text: "AI-Integrated Workflow Optimization", Icon: IconLightning },
   { text: "Global-Scale Web & Mobile Infrastructure", Icon: IconGlobe },
