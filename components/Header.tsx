@@ -1,16 +1,18 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { Link, usePathname } from "@/navigation";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
-] as const;
+  { key: "home" as const, href: "/" },
+  { key: "projects" as const, href: "/projects" },
+  { key: "contact" as const, href: "/contact" },
+];
 
 export default function Header() {
+  const t = useTranslations("header");
   const pathname = usePathname();
   const [hidden, setHidden] = useState(false);
   const [lastY, setLastY] = useState(0);
@@ -51,24 +53,27 @@ export default function Header() {
                 (link.href !== "/" && pathname.startsWith(link.href));
               return (
                 <Link
-                  key={link.name}
+                  key={link.key}
                   href={link.href}
                   className={`text-[0.95rem] font-semibold no-underline transition-colors ${
                     active ? "text-[#60a5fa]" : "text-[#6b7280] hover:text-[#3b82f6]"
                   }`}
                 >
-                  {link.name}
+                  {t(link.key)}
                 </Link>
               );
             })}
           </div>
 
-          <Link
-            href="/contact"
-            className="shrink-0 rounded-full bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-5 py-2.5 text-xs font-bold text-white shadow-md shadow-blue-500/25 transition-opacity hover:opacity-95 no-underline md:px-7 md:py-3 md:text-sm"
-          >
-            Let&apos;s Talk
-          </Link>
+          <div className="flex shrink-0 items-center gap-2 md:gap-3">
+            <LanguageSwitcher />
+            <Link
+              href="/contact"
+              className="shrink-0 rounded-full bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-5 py-2.5 text-xs font-bold text-white shadow-md shadow-blue-500/25 transition-opacity hover:opacity-95 no-underline md:px-7 md:py-3 md:text-sm"
+            >
+              {t("letsTalk")}
+            </Link>
+          </div>
         </nav>
 
         <div className="flex justify-center gap-8 border-t border-gray-100 px-4 py-2 md:hidden">
@@ -78,13 +83,13 @@ export default function Header() {
               (link.href !== "/" && pathname.startsWith(link.href));
             return (
               <Link
-                key={`m-${link.name}`}
+                key={`m-${link.key}`}
                 href={link.href}
                 className={`text-sm font-semibold no-underline ${
                   active ? "text-[#60a5fa]" : "text-[#6b7280] hover:text-[#3b82f6]"
                 }`}
               >
-                {link.name}
+                {t(link.key)}
               </Link>
             );
           })}

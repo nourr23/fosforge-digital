@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/navigation";
 import avatar1 from "@/public/avatar1.jpg";
 import avatar2 from "@/public/avatar2.jpg";
 import avatar3 from "@/public/avatar3.jpg";
@@ -7,7 +8,9 @@ import avatar4 from "@/public/avatar4.jpg";
 
 const avatars = [avatar1, avatar2, avatar3, avatar4] as const;
 
-export function HeroSection() {
+export async function HeroSection() {
+  const t = await getTranslations("home.hero");
+
   return (
     <section className="relative overflow-hidden bg-white px-6 pb-24 pt-44 text-center md:px-10">
       <div
@@ -17,19 +20,18 @@ export function HeroSection() {
 
       <div className="mx-auto flex max-w-7xl flex-col items-center">
         <div className="mb-8 inline-flex items-center rounded-full border border-blue-100 bg-[#eef6ff] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#2563eb]">
-          Leading the Digital Frontier
+          {t("badge")}
         </div>
 
         <h1 className="mb-7 text-5xl font-black leading-[0.95] tracking-[-0.05em] text-[#111827] md:text-7xl">
-          Building the Future of <br />
+          {t("titleLine1")} <br />
           <span className="bg-gradient-to-r from-[#3b82f6] via-[#60a5fa] to-[#22d3ee] bg-clip-text text-transparent">
-            Digital Innovation
+            {t("titleHighlight")}
           </span>
         </h1>
 
         <p className="mx-auto mb-10 max-w-xl text-sm font-medium leading-relaxed text-[#6b7280] md:text-base">
-          Fosforge Digital is a high-performance software agency crafting futuristic web
-          experiences, robust mobile apps, and AI-driven automation systems.
+          {t("description")}
         </p>
 
         <div className="mb-14 flex flex-wrap items-center justify-center gap-4">
@@ -37,20 +39,20 @@ export function HeroSection() {
             href="/contact"
             className="rounded-xl bg-[#3b82f6] px-8 py-3.5 text-sm font-semibold text-white shadow-md shadow-blue-500/20 transition-colors hover:bg-[#2563eb] no-underline"
           >
-            Get Started
+            {t("getStarted")}
           </Link>
 
           <Link
             href="/projects"
             className="rounded-xl border border-gray-200 bg-white px-8 py-3.5 text-sm font-semibold text-[#111827] shadow-sm transition-colors hover:bg-gray-50 no-underline"
           >
-            View Our Work
+            {t("viewWork")}
           </Link>
         </div>
 
         <div className="flex flex-col items-center gap-4">
           <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#9ca3af]">
-            Trusted by Global Visionaries
+            {t("trustedBy")}
           </p>
 
           <div className="flex -space-x-2">

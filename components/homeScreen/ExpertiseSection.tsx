@@ -8,6 +8,7 @@ import {
   IconPalette,
 } from "@/components/homeScreen/icons";
 import { LANDING_WIDE } from "@/components/homeScreen/landingLayout";
+import { getTranslations } from "next-intl/server";
 
 type Accent = "blue" | "teal" | "green" | "orange" | "indigo" | "sky";
 
@@ -30,35 +31,37 @@ const accentIcon: Record<Accent, string> = {
 };
 
 const services: {
-  title: string;
+  key: "web" | "mobile" | "uiux" | "ai" | "cloud" | "branding";
   accent: Accent;
   Icon: ComponentType<{ className?: string }>;
 }[] = [
-  { title: "Web Development", accent: "blue", Icon: IconCode },
-  { title: "Mobile Applications", accent: "teal", Icon: IconMobile },
-  { title: "UI/UX Strategy", accent: "green", Icon: IconPalette },
-  { title: "AI & Automation", accent: "orange", Icon: IconCpu },
-  { title: "Cloud Architecture", accent: "indigo", Icon: IconCloud },
-  { title: "Branding & Growth", accent: "sky", Icon: IconChart },
+  { key: "web", accent: "blue", Icon: IconCode },
+  { key: "mobile", accent: "teal", Icon: IconMobile },
+  { key: "uiux", accent: "green", Icon: IconPalette },
+  { key: "ai", accent: "orange", Icon: IconCpu },
+  { key: "cloud", accent: "indigo", Icon: IconCloud },
+  { key: "branding", accent: "sky", Icon: IconChart },
 ];
 
-export function ExpertiseSection() {
+export async function ExpertiseSection() {
+  const t = await getTranslations("home.expertise");
+
   return (
     <section className="bg-white py-20">
       <div className={LANDING_WIDE}>
         <header className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-black tracking-[-0.04em] text-[#111827] md:text-5xl">
-            Our Core Expertise
+            {t("title")}
           </h2>
           <p className="mx-auto max-w-2xl text-sm font-medium text-[#374151] md:text-base">
-            Cutting-edge solutions tailored to propel your business into the future.
+            {t("subtitle")}
           </p>
         </header>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ title, accent, Icon }) => (
+          {services.map(({ key, accent, Icon }) => (
             <article
-              key={title}
+              key={key}
               className="rounded-xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
               style={{ borderLeftWidth: 4, borderLeftColor: accentColor[accent] }}
             >
@@ -67,16 +70,17 @@ export function ExpertiseSection() {
               >
                 <Icon className="h-6 w-6" />
               </div>
-              <h3 className="mb-3 text-xl font-black text-[#111827]">{title}</h3>
+              <h3 className="mb-3 text-xl font-black text-[#111827]">
+                {t(`services.${key}`)}
+              </h3>
               <p className="mb-8 text-sm font-medium leading-relaxed text-[#6b7280]">
-                Bespoke digital solutions engineered for performance, scalability, and elegant user
-                experiences.
+                {t("description")}
               </p>
               <button
                 type="button"
                 className="text-xs font-bold uppercase tracking-[0.12em] text-[#3b82f6]"
               >
-                Learn More &gt;
+                {t("learnMore")}
               </button>
             </article>
           ))}
