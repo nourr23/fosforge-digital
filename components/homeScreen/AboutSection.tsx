@@ -2,7 +2,7 @@ import { IconCpu, IconGlobe, IconLightning, IconShield } from "@/components/home
 import { LANDING_WIDE } from "@/components/homeScreen/landingLayout";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import aboutImage from "@/public/aboutImage.png";
+import homepageImage from "@/public/projectAnalytics.jpg";
 
 const featureKeys = [
   { key: "ai" as const, Icon: IconLightning },
@@ -21,7 +21,7 @@ export async function AboutSection() {
             <div className="relative overflow-hidden rounded-3xl border border-gray-100 shadow-lg shadow-black/5">
               <Image
                 alt={t("imageAlt")}
-                src={aboutImage}
+                src={homepageImage}
                 width={640}
                 height={800}
                 className="aspect-[4/5] w-full object-cover object-center sm:aspect-[5/6]"

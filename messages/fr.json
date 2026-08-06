@@ -66,16 +66,17 @@
       "learnMore": "En savoir plus >"
     },
     "projects": {
-      "title": "Projets phares",
-      "subtitle": "Un aperçu des merveilles numériques que nous avons conçues pour nos partenaires.",
-      "warehouseAlt": "Logistique d'entrepôt",
-      "analyticsAlt": "Tableau de bord analytique sur ordinateur portable"
+      "title": "Projets",
+      "createdIn": "Créé en {year}",
+      "website": "Site web",
+      "mobileApp": "Application mobile",
+      "viewAll": "Voir tous les projets"
     },
     "stats": {
-      "projectsCompleted": "Projets réalisés",
-      "clientSatisfaction": "Satisfaction client",
-      "systemUptime": "Disponibilité système",
-      "globalPartners": "Partenaires mondiaux"
+      "projectsCompleted": "Projets livrés",
+      "clientSatisfaction": "Confiance de livraison",
+      "systemUptime": "Indice de fiabilité",
+      "globalPartners": "Réseau partenaire"
     },
     "cta": {
       "titleLine1": "Prêt à concrétiser",
@@ -121,10 +122,10 @@
       "submit": "Transmettre le message"
     },
     "stats": {
-      "uptime": "PROTOCOLE DE DISPONIBILITÉ",
-      "activeProjects": "PROJETS ACTIFS",
-      "clientRetention": "FIDÉLISATION CLIENT",
-      "nodesWorldwide": "NŒUDS MONDIAUX"
+      "uptime": "FIABILITÉ",
+      "activeProjects": "PROJETS EN COURS",
+      "clientRetention": "CONFIANCE CLIENT",
+      "nodesWorldwide": "RÉSEAU PARTENAIRE"
     }
   },
   "projects": {

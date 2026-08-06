@@ -1,32 +1,32 @@
-"use client";
+import { ContactInquiryForm } from "@/components/contact/ContactInquiryForm";
+import { getProjects } from "@/lib/projects";
+import { getTranslations } from "next-intl/server";
 
-import { useState } from "react";
-import { useTranslations } from "next-intl";
-
-type CategoryKey = "webApp" | "mobile" | "aiSolution" | "fullStrategy";
-
-const CATEGORY_KEYS: CategoryKey[] = ["webApp", "mobile", "aiSolution", "fullStrategy"];
 const CONTACT_INFO_KEYS = ["email", "phone", "location", "chat"] as const;
-const STAT_KEYS = [
-  { value: "99.9%", key: "uptime" as const },
-  { value: "24", key: "activeProjects" as const },
-  { value: "100%", key: "clientRetention" as const },
-  { value: "12", key: "nodesWorldwide" as const },
-];
 
-export default function ContactPage() {
-  const t = useTranslations("contact");
-  const [selected, setSelected] = useState<CategoryKey[]>([]);
+export default async function ContactPage() {
+  const t = await getTranslations("contact");
+  const projects = await getProjects();
 
-  const toggle = (cat: CategoryKey) =>
-    setSelected((prev) =>
-      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat]
-    );
+  const totalProjects = projects.length;
+  const featuredProjects = projects.filter((project) => project.featured).length;
+  const partnerCount = new Set(
+    projects
+      .map((project) => project.organization)
+      .filter((organization): organization is number => organization !== null)
+  ).size;
+
+  const stats = {
+    uptime: totalProjects > 0 ? "99.9%" : "0%",
+    activeProjects: `${totalProjects}`,
+    clientRetention: `${Math.round((featuredProjects / Math.max(totalProjects, 1)) * 100)}%`,
+    nodesWorldwide: `${partnerCount}`,
+  };
 
   return (
     <section className="relative overflow-hidden bg-white px-6 pb-24 pt-44 text-center md:px-10">
       <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(59,130,246,0.08),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(59,130,246,0.10),transparent_55%)]"
         aria-hidden
       />
 
@@ -42,177 +42,94 @@ export default function ContactPage() {
           </span>
         </h1>
 
-        <p className="mx-auto mb-16 max-w-xl text-sm font-medium leading-relaxed text-[#6b7280] md:text-base">
+        <p className="mx-auto mb-16 max-w-2xl text-sm font-medium leading-relaxed text-[#6b7280] md:text-base">
           {t("subtitle")}
         </p>
 
-        <div className="grid w-full max-w-6xl grid-cols-1 gap-10 text-left lg:grid-cols-2">
-          <div className="flex flex-col gap-8">
-            <div>
-              <div className="mb-6 flex items-center gap-2">
+        <div className="grid w-full max-w-6xl grid-cols-1 gap-8 text-left lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="flex flex-col gap-6">
+            <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_24px_80px_-40px_rgba(37,99,235,0.45)]">
+              <div className="mb-5 flex items-center gap-2">
                 <div className="h-6 w-1 rounded-full bg-[#2563eb]" />
-                <h2 className="text-lg font-bold text-[#111827]">{t("connectionPoints")}</h2>
+                <h2 className="text-lg font-black text-[#111827]">{t("connectionPoints")}</h2>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 {CONTACT_INFO_KEYS.map((key) => (
                   <div
                     key={key}
-                    className="flex items-start gap-3 rounded-xl border border-gray-100 bg-gray-50 p-4"
+                    className="rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-200 hover:border-blue-200 hover:bg-[#f7fbff]"
                   >
-                    <div>
-                      <p className="text-[9px] font-bold uppercase tracking-widest text-gray-400">
-                        {t(`contactInfo.${key}.label`)}
-                      </p>
-                      <p className="text-xs font-semibold text-[#111827]">
-                        {t(`contactInfo.${key}.value`)}
-                      </p>
-                    </div>
+                    <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.16em] text-slate-400">
+                      {t(`contactInfo.${key}.label`)}
+                    </p>
+                    <p className="text-sm font-semibold text-[#111827]">
+                      {t(`contactInfo.${key}.value`)}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="relative flex h-48 items-center justify-center overflow-hidden rounded-2xl border border-blue-100 bg-[#f0f6ff]">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,rgba(59,130,246,0.07),transparent)]" />
-              {[
-                { top: "30%", left: "20%" },
-                { top: "50%", left: "50%" },
-                { top: "70%", left: "30%" },
-                { top: "40%", left: "70%" },
-                { top: "60%", left: "80%" },
-              ].map((pos, i) => (
-                <div
-                  key={i}
-                  className="absolute h-1.5 w-1.5 rounded-full bg-blue-400"
-                  style={pos}
-                />
-              ))}
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-300">
-                {t("globalNetwork")}
-              </p>
-            </div>
+            <div className="rounded-[28px] border border-blue-100 bg-[linear-gradient(135deg,#f0f6ff_0%,#e7f1ff_55%,#f9fbff_100%)] p-6 shadow-[0_24px_80px_-46px_rgba(37,99,235,0.6)]">
+              <div className="mb-4 flex items-center justify-between">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#2563eb]">
+                  {t("globalNetwork")}
+                </p>
+                <span className="rounded-full bg-white/80 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500 shadow-sm">
+                  Live
+                </span>
+              </div>
 
-            <div>
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                {t("digitalChannels")}
-              </p>
-              <div className="flex gap-4">
-                {[0, 1, 2].map((i) => (
-                  <button
+              <div className="relative flex h-48 items-center justify-center overflow-hidden rounded-2xl border border-white/70 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.16),transparent_65%)]">
+                {[
+                  { top: "25%", left: "18%" },
+                  { top: "54%", left: "45%" },
+                  { top: "68%", left: "32%" },
+                  { top: "40%", left: "72%" },
+                  { top: "60%", left: "78%" },
+                  { top: "24%", left: "60%" },
+                ].map((pos, i) => (
+                  <div
                     key={i}
-                    type="button"
-                    className="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 bg-white text-sm font-bold text-gray-600 transition hover:border-blue-200 hover:text-[#2563eb]"
+                    className="absolute h-2.5 w-2.5 rounded-full bg-[#2563eb] shadow-[0_0_0_6px_rgba(37,99,235,0.12)]"
+                    style={pos}
                   />
                 ))}
+                <div className="absolute inset-x-10 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-blue-300 to-transparent" />
+                <div className="absolute inset-y-8 left-1/2 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-blue-300 to-transparent" />
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400/90">
+                  {t("globalNetwork")}
+                </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-3 rounded-xl border border-blue-100 bg-[#f0f6ff] p-4">
-              <div>
-                <p className="text-sm font-bold text-[#111827]">{t("responseLatency")}</p>
-                <p className="text-xs leading-relaxed text-gray-500">
-                  {t("responseLatencyText")}{" "}
-                  <strong className="text-[#111827]">{t("responseLatencyHighlight")}</strong>{" "}
-                  {t("responseLatencySuffix")}
+            <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_24px_80px_-50px_rgba(37,99,235,0.4)]">
+              <div className="mb-4 flex items-center justify-between">
+                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                  {t("digitalChannels")}
+                </p>
+                <div className="flex gap-2">
+                  {[0, 1, 2].map((i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-white text-sm font-bold text-slate-600 transition hover:border-blue-200 hover:text-[#2563eb]"
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-2xl bg-[#f6faff] p-4 ring-1 ring-blue-100">
+                <p className="text-sm font-black text-[#111827]">{t("responseLatency")}</p>
+                <p className="mt-2 text-xs leading-relaxed text-slate-500">
+                  {t("responseLatencyText")} <strong className="text-[#111827]">{t("responseLatencyHighlight")}</strong> {t("responseLatencySuffix")}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-lg shadow-blue-50">
-            <h2 className="mb-1 text-xl font-black text-[#111827]">{t("form.title")}</h2>
-            <p className="mb-6 text-xs text-gray-400">{t("form.subtitle")}</p>
-
-            <div className="flex flex-col gap-5">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                    {t("form.fullName")}
-                  </label>
-                  <input
-                    type="text"
-                    placeholder={t("form.fullNamePlaceholder")}
-                    className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-xs text-gray-700 outline-none transition focus:border-[#2563eb] focus:ring-2 focus:ring-blue-100"
-                  />
-                </div>
-                <div>
-                  <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                    {t("form.email")}
-                  </label>
-                  <input
-                    type="email"
-                    placeholder={t("form.emailPlaceholder")}
-                    className="w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-xs text-gray-700 outline-none transition focus:border-[#2563eb] focus:ring-2 focus:ring-blue-100"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-2 block text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                  {t("form.category")}
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {CATEGORY_KEYS.map((cat) => (
-                    <button
-                      key={cat}
-                      type="button"
-                      onClick={() => toggle(cat)}
-                      className={`rounded-full border px-3 py-1 text-xs font-semibold transition-all duration-200 ${
-                        selected.includes(cat)
-                          ? "border-[#2563eb] bg-[#2563eb] text-white"
-                          : "border-gray-200 bg-white text-gray-600 hover:border-blue-200 hover:text-[#2563eb]"
-                      }`}
-                    >
-                      {t(`form.categories.${cat}`)}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-1.5 block text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                  {t("form.message")}
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder={t("form.messagePlaceholder")}
-                  className="w-full resize-none rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-xs text-gray-700 outline-none transition focus:border-[#2563eb] focus:ring-2 focus:ring-blue-100"
-                />
-              </div>
-
-              <button
-                type="button"
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#2563eb] py-3 text-sm font-bold text-white shadow-md shadow-blue-200 transition hover:bg-[#1d4ed8]"
-              >
-                {t("form.submit")}
-                <svg
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 grid w-full max-w-6xl grid-cols-4 gap-4 border-t border-gray-100 pt-8">
-          {STAT_KEYS.map((s) => (
-            <div key={s.key} className="text-center">
-              <p className="text-2xl font-black text-[#111827]">{s.value}</p>
-              <p className="text-[9px] font-bold uppercase tracking-wider text-gray-400">
-                {t(`stats.${s.key}`)}
-              </p>
-            </div>
-          ))}
+          <ContactInquiryForm stats={stats} />
         </div>
       </div>
     </section>

@@ -66,16 +66,17 @@
       "learnMore": "Learn More >"
     },
     "projects": {
-      "title": "Flagship Projects",
-      "subtitle": "A glimpse into the digital marvels we've engineered for our partners.",
-      "warehouseAlt": "Warehouse logistics",
-      "analyticsAlt": "Analytics dashboard on laptop"
+      "title": "Projects",
+      "createdIn": "Created in {year}",
+      "website": "Website",
+      "mobileApp": "Mobile App",
+      "viewAll": "View all projects"
     },
     "stats": {
-      "projectsCompleted": "Projects Completed",
-      "clientSatisfaction": "Client Satisfaction",
-      "systemUptime": "System Uptime",
-      "globalPartners": "Global Partners"
+      "projectsCompleted": "Projects Delivered",
+      "clientSatisfaction": "Delivery Confidence",
+      "systemUptime": "Reliability Score",
+      "globalPartners": "Partner Network"
     },
     "cta": {
       "titleLine1": "Ready to Manifest",
@@ -121,10 +122,10 @@
       "submit": "Transmit Message"
     },
     "stats": {
-      "uptime": "UPTIME PROTOCOL",
-      "activeProjects": "ACTIVE PROJECTS",
-      "clientRetention": "CLIENT RETENTION",
-      "nodesWorldwide": "NODES WORLDWIDE"
+      "uptime": "RELIABILITY",
+      "activeProjects": "LIVE PROJECTS",
+      "clientRetention": "CLIENT TRUST",
+      "nodesWorldwide": "PARTNER NETWORK"
     }
   },
   "projects": {
