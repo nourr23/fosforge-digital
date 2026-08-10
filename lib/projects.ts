@@ -47,3 +47,25 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 
   return data;
 }
+
+export async function getProjectGalleryImages(project: Project): Promise<string[]> {
+  const storedImages = [project.cover_image, ...project.imgs].filter(
+    (image): image is string => Boolean(image)
+  );
+
+  const { data: files, error } = await supabase.storage.from("projects").list(project.slug, {
+    limit: 100,
+    sortBy: { column: "name", order: "asc" },
+  });
+
+  if (error) {
+    console.error("Error fetching project gallery:", error);
+    return Array.from(new Set(storedImages));
+  }
+
+  const storageImages = (files ?? [])
+    .filter((file) => file.name && file.id)
+    .map((file) => supabase.storage.from("projects").getPublicUrl(`${project.slug}/${file.name}`).data.publicUrl);
+
+  return Array.from(new Set([...storedImages, ...storageImages]));
+}

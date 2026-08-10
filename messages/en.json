@@ -71,6 +71,17 @@
       "mobileApp": "Mobile App",
       "viewAll": "View all projects"
     },
+    "projectDetail": {
+      "back": "Back to projects",
+      "year": "Created in {year}",
+      "yearLabel": "Year",
+      "technologies": "Technologies",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "gallery": "Gallery",
+      "viewProject": "View project"
+    },
     "stats": {
       "projectsCompleted": "Projects Delivered",
       "clientSatisfaction": "Delivery Confidence",
@@ -91,9 +102,7 @@
     "subtitle": "Ready to transform your vision into a digital reality? Our team of innovators and engineers is waiting to transmit your ideas into production.",
     "connectionPoints": "Connection Points",
     "contactInfo": {
-      "email": { "label": "DIRECT TRANSMIT", "value": "hello@fosforge.digital" },
-      "phone": { "label": "VOICE LINK", "value": "+216 123 456 789" },
-      "location": { "label": "GLOBAL NODE", "value": "Silicon Valley, CA" },
+      "email": { "label": "DIRECT TRANSMIT", "value": "contact@fosforge-digital.com" },
       "chat": { "label": "ENCRYPTED CHAT", "value": "@fosforge_digital" }
     },
     "globalNetwork": "Global Innovation Network",

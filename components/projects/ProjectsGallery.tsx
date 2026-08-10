@@ -121,7 +121,6 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
             const description = getProjectDescription(project, locale);
             const technologies = formatTechnologies(project);
             const imageSrc = project.logo ?? project.cover_image;
-            const link = project.url ?? project.href;
             const card = (
               <article className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_24px_80px_-40px_rgba(37,99,235,0.45)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_-36px_rgba(37,99,235,0.55)]">
                 <div className="relative flex h-60 items-center justify-center overflow-hidden bg-[linear-gradient(135deg,#eff6ff_0%,#dbeafe_55%,#f8fbff_100%)]">
@@ -198,30 +197,11 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
               </article>
             );
 
-            if (link) {
-              const isExternal = link.startsWith("http");
-              if (isExternal) {
-                return (
-                  <a
-                    key={project.id}
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block h-full"
-                  >
-                    {card}
-                  </a>
-                );
-              }
-
-              return (
-                <Link key={project.id} href={link} className="block h-full">
-                  {card}
-                </Link>
-              );
-            }
-
-            return <div key={project.id}>{card}</div>;
+            return (
+              <Link key={project.id} href={`/projects/${project.slug}`} className="block h-full">
+                {card}
+              </Link>
+            );
           })}
         </div>
       </div>
