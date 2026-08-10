@@ -62,7 +62,7 @@ export async function ExpertiseSection() {
           {services.map(({ key, accent, Icon }) => (
             <article
               key={key}
-              className="rounded-xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+              className="min-h-[220px] rounded-xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
               style={{ borderLeftWidth: 4, borderLeftColor: accentColor[accent] }}
             >
               <div
@@ -73,15 +73,9 @@ export async function ExpertiseSection() {
               <h3 className="mb-3 text-xl font-black text-[#111827]">
                 {t(`services.${key}`)}
               </h3>
-              <p className="mb-8 text-sm font-medium leading-relaxed text-[#6b7280]">
+              <p className="mb-8 max-w-full break-words text-sm font-medium leading-relaxed text-[#6b7280]">
                 {t("description")}
               </p>
-              <button
-                type="button"
-                className="text-xs font-bold uppercase tracking-[0.12em] text-[#3b82f6]"
-              >
-                {t("learnMore")}
-              </button>
             </article>
           ))}
         </div>

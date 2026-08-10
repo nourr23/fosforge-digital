@@ -355,12 +355,23 @@ const FALLBACK_PROJECTS: Project[] = [
   },
 ];
 
+const TOP_PROJECT_SLUGS = [
+  "la-fayette-education",
+  "genup-2050",
+  "fnac-for-environment",
+];
+
 export async function ProjectsSection() {
   const t = await getTranslations("home.projects");
   const locale = await getLocale();
 
   const fetched = await getFeaturedProjects();
-  const projects = fetched.length > 0 ? fetched.slice(0, 3) : FALLBACK_PROJECTS.slice(0, 3);
+  const projects =
+    fetched.length > 0
+      ? TOP_PROJECT_SLUGS.map((slug) => fetched.find((project) => project.slug === slug)).filter(
+          Boolean
+        )
+      : FALLBACK_PROJECTS.filter((project) => TOP_PROJECT_SLUGS.includes(project.slug));
 
   return (
     <section className="bg-white py-20 md:py-24">
