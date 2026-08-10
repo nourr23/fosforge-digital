@@ -133,7 +133,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                     rel="noopener noreferrer"
                     className="inline-flex rounded-md bg-[#2563eb] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-colors hover:bg-[#1d4ed8]"
                   >
-                    {t("viewProject")}
+                    {project.mobile ? t("viewMobileApp") : t("viewWebsite")}
                   </a>
                 </div>
               ) : null}

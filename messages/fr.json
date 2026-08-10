@@ -80,7 +80,8 @@
       "backend": "Backend",
       "database": "Base de données",
       "gallery": "Galerie",
-      "viewProject": "Voir le projet"
+      "viewWebsite": "Voir le site web",
+      "viewMobileApp": "Voir l'application mobile"
     },
     "stats": {
       "projectsCompleted": "Projets livrés",
