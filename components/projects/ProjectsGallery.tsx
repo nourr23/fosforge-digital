@@ -133,6 +133,7 @@ export default function ProjectsGallery({ projects }: { projects: Project[] }) {
                         src={imageSrc}
                         alt={title}
                         fill
+                        unoptimized
                         className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />
