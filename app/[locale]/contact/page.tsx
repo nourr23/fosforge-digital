@@ -2,7 +2,7 @@ import { ContactInquiryForm } from "@/components/contact/ContactInquiryForm";
 import { getProjects } from "@/lib/projects";
 import { getTranslations } from "next-intl/server";
 
-const CONTACT_INFO_KEYS = ["email", "phone", "location", "chat"] as const;
+const CONTACT_INFO_KEYS = ["email", "chat"] as const;
 
 export default async function ContactPage() {
   const t = await getTranslations("contact");

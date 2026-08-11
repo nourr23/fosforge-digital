@@ -71,6 +71,18 @@
       "mobileApp": "Mobile App",
       "viewAll": "View all projects"
     },
+    "projectDetail": {
+      "back": "Back to projects",
+      "year": "Created in {year}",
+      "yearLabel": "Year",
+      "technologies": "Technologies",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "gallery": "Gallery",
+      "viewWebsite": "View website",
+      "viewMobileApp": "View mobile app"
+    },
     "stats": {
       "projectsCompleted": "Projects Delivered",
       "clientSatisfaction": "Delivery Confidence",
@@ -92,8 +104,6 @@
     "connectionPoints": "Connection Points",
     "contactInfo": {
       "email": { "label": "DIRECT TRANSMIT", "value": "contact@fosforge-digital.com" },
-      "phone": { "label": "VOICE LINK", "value": "+216 123 456 789" },
-      "location": { "label": "GLOBAL NODE", "value": "Silicon Valley, CA" },
       "chat": { "label": "ENCRYPTED CHAT", "value": "@fosforge_digital" }
     },
     "globalNetwork": "Global Innovation Network",
