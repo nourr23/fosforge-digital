@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import {
@@ -31,6 +32,36 @@ function getProjectDescription(
     return project.description_i18n?.fr ?? project.description_i18n?.en ?? "";
   }
   return project.description_i18n?.en ?? project.description_i18n?.fr ?? "";
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const project = await fetchProjectBySlug(slug);
+
+  if (!project) {
+    return { title: "Project" };
+  }
+
+  const title = getProjectTitle(project, locale);
+  const description = getProjectDescription(project, locale);
+  const image = project.logo ?? project.cover_image;
+
+  return {
+    title,
+    description: description || undefined,
+    alternates: {
+      canonical: `/${locale}/projects/${slug}`,
+      languages: {
+        en: `/en/projects/${slug}`,
+        fr: `/fr/projects/${slug}`,
+      },
+    },
+    openGraph: {
+      title,
+      description: description || undefined,
+      images: image ? [{ url: image, alt: title }] : undefined,
+    },
+  };
 }
 
 export default async function ProjectDetailPage({ params }: Props) {
