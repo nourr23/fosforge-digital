@@ -19,10 +19,59 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
+  const title = t("title");
+  const description = t("description");
+  const keywords = t("keywords");
 
   return {
-    title: t("title"),
-    description: t("description"),
+    title: {
+      default: title,
+      template: "%s | FosForge Digital",
+    },
+    description,
+    keywords: keywords.split(",").map((k) => k.trim()),
+    authors: [{ name: "FosForge Digital" }],
+    creator: "FosForge Digital",
+    publisher: "FosForge Digital",
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        en: "/en",
+        fr: "/fr",
+        "x-default": "/fr",
+      },
+    },
+    openGraph: {
+      type: "website",
+      locale: locale === "fr" ? "fr_FR" : "en_US",
+      alternateLocale: locale === "fr" ? ["en_US"] : ["fr_FR"],
+      url: `/${locale}`,
+      siteName: "FosForge Digital",
+      title,
+      description,
+      images: [
+        {
+          url: "/logo.png",
+          width: 1195,
+          height: 182,
+          alt: "FosForge Digital",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/logo.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
   };
 }
 

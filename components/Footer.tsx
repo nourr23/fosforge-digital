@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/navigation";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -12,7 +13,14 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div>
-            <h2 className="text-[#3b82f6] font-black text-xl mb-4">FOSFORGE</h2>
+            <Image
+              src="/logo.png"
+              alt="FosForge Digital"
+              width={1195}
+              height={182}
+              className="mb-4 block h-10 w-auto max-w-none md:h-11"
+              style={{ width: "auto" }}
+            />
             <p className="text-[#64748b] leading-7 text-sm">{t("tagline")}</p>
           </div>
 

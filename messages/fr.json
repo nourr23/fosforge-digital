@@ -1,7 +1,8 @@
 {
   "metadata": {
-    "title": "FosForge Digital",
-    "description": "Agence logicielle moderne et innovante"
+    "title": "FosForge Digital | Agence web, mobile et IA",
+    "description": "FosForge Digital conçoit des sites web haute performance, des applications mobiles et des solutions d'IA pour les entreprises ambitieuses. Forigeons votre prochain produit numérique.",
+    "keywords": "FosForge Digital, agence logicielle, développement web, applications mobiles, solutions IA, Next.js, transformation numérique"
   },
   "header": {
     "home": "Accueil",
@@ -104,6 +105,7 @@
     "connectionPoints": "Points de connexion",
     "contactInfo": {
       "email": { "label": "TRANSMISSION DIRECTE", "value": "contact@fosforge-digital.com" },
+      "phone": { "label": "LIEN VOCAL", "value": "+216 94 077 836" },
       "chat": { "label": "CHAT CHIFFRÉ", "value": "@fosforge_digital" }
     },
     "globalNetwork": "Réseau mondial d'innovation",

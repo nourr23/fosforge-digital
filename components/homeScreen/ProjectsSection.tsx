@@ -122,6 +122,7 @@ function ProjectCard({
               src={project.logo}
               alt={title}
               fill
+              unoptimized
               className="object-contain p-2"
               sizes="112px"
             />
@@ -369,14 +370,14 @@ export async function ProjectsSection() {
 
   return (
     <section className="bg-white py-20 md:py-24">
-      <div className={`${LANDING_WIDE} flex flex-col`}>
+      <div className={LANDING_WIDE}>
         <h2 className="mb-12 text-4xl font-black uppercase tracking-[-0.04em] text-[#111827] md:mb-16 md:text-5xl">
           <span className="bg-gradient-to-r from-[#3b82f6] via-[#60a5fa] to-[#22d3ee] bg-clip-text text-transparent">
             {t("title")}
           </span>
         </h2>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="grid auto-rows-max grid-cols-1 content-start items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}

@@ -1,7 +1,8 @@
 {
   "metadata": {
-    "title": "FosForge Digital",
-    "description": "Modern software agency website"
+    "title": "FosForge Digital | Web, Mobile & AI Software Agency",
+    "description": "FosForge Digital builds high-performance websites, mobile apps, and AI-driven solutions for ambitious companies. Let's forge your next digital product.",
+    "keywords": "FosForge Digital, software agency, web development, mobile apps, AI solutions, Next.js, digital transformation"
   },
   "header": {
     "home": "Home",
@@ -104,6 +105,7 @@
     "connectionPoints": "Connection Points",
     "contactInfo": {
       "email": { "label": "DIRECT TRANSMIT", "value": "contact@fosforge-digital.com" },
+      "phone": { "label": "VOICE LINK", "value": "+216 94 077 836" },
       "chat": { "label": "ENCRYPTED CHAT", "value": "@fosforge_digital" }
     },
     "globalNetwork": "Global Innovation Network",
