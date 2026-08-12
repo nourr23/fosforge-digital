@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "title": "FosForge Digital | Web, Mobile & AI Software Agency",
+    "description": "FosForge Digital builds high-performance websites, mobile apps, and AI-driven solutions for ambitious companies. Let's forge your next digital product.",
+    "keywords": "FosForge Digital, software agency, web development, mobile apps, AI solutions, Next.js, digital transformation"
+  },
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact",
+    "letsTalk": "Let's Talk"
+  },
+  "footer": {
+    "tagline": "Pioneering the digital frontier through innovative software development and futuristic design.",
+    "services": "Services",
+    "webDevelopment": "Web Development",
+    "mobileApps": "Mobile Apps",
+    "uiUxDesign": "UI/UX Design",
+    "aiSolutions": "AI Solutions",
+    "company": "Company",
+    "about": "About",
+    "projects": "Projects",
+    "careers": "Careers",
+    "contact": "Contact",
+    "connect": "Connect",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2026 FOSFORGE DIGITAL. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "home": {
+    "hero": {
+      "badge": "Leading the Digital Frontier",
+      "titleLine1": "Building the Future of",
+      "titleHighlight": "Digital Innovation",
+      "description": "Fosforge Digital is a high-performance software agency crafting futuristic web experiences, robust mobile apps, and AI-driven automation systems.",
+      "getStarted": "Get Started",
+      "viewWork": "View Our Work",
+      "trustedBy": "Trusted by Global Visionaries"
+    },
+    "about": {
+      "imageAlt": "Team member working on a laptop in a technical environment",
+      "innovationHub": "Innovation Hub",
+      "certifiedExcellence": "Certified Excellence",
+      "titleLine1": "Pioneering the Next Wave of",
+      "titleHighlight": "Digital Transformation",
+      "description": "We don't just write code; we architect experiences. Our multidisciplinary team combines technical prowess with strategic design thinking to build software that scales, adapts, and dominates.",
+      "features": {
+        "ai": "AI-Integrated Workflow Optimization",
+        "infrastructure": "Global-Scale Web & Mobile Infrastructure",
+        "security": "Fort-Knox Level Digital Security Protocols"
+      }
+    },
+    "expertise": {
+      "title": "Our Core Expertise",
+      "subtitle": "Cutting-edge solutions tailored to propel your business into the future.",
+      "services": {
+        "web": "Web Development",
+        "mobile": "Mobile Applications",
+        "uiux": "UI/UX Strategy",
+        "ai": "AI & Automation",
+        "cloud": "Cloud Architecture",
+        "branding": "Branding & Growth"
+      },
+      "description": "Bespoke digital solutions engineered for performance, scalability, and elegant user experiences."
+    },
+    "projects": {
+      "title": "Projects",
+      "createdIn": "Created in {year}",
+      "website": "Website",
+      "mobileApp": "Mobile App",
+      "viewAll": "View all projects"
+    },
+    "projectDetail": {
+      "back": "Back to projects",
+      "year": "Created in {year}",
+      "yearLabel": "Year",
+      "technologies": "Technologies",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "gallery": "Gallery",
+      "viewWebsite": "View website",
+      "viewMobileApp": "View mobile app"
+    },
+    "stats": {
+      "projectsCompleted": "Projects Delivered",
+      "clientSatisfaction": "Delivery Confidence",
+      "systemUptime": "Reliability Score",
+      "globalPartners": "Partner Network"
+    },
+    "cta": {
+      "titleLine1": "Ready to Manifest",
+      "titleLine2": "Your Vision?",
+      "description": "Connect with our innovation specialists today and let's build something extraordinary together.",
+      "button": "Initiate Project"
+    }
+  },
+  "contact": {
+    "badge": "Contact Engineering",
+    "titleLine1": "Let's Build the",
+    "titleHighlight": "Next Generation",
+    "subtitle": "Ready to transform your vision into a digital reality? Our team of innovators and engineers is waiting to transmit your ideas into production.",
+    "connectionPoints": "Connection Points",
+    "contactInfo": {
+      "email": { "label": "DIRECT TRANSMIT", "value": "contact@fosforge-digital.com" },
+      "phone": { "label": "VOICE LINK", "value": "+216 94 077 836" },
+      "chat": { "label": "ENCRYPTED CHAT", "value": "@fosforge_digital" }
+    },
+    "globalNetwork": "Global Innovation Network",
+    "digitalChannels": "Digital Channels",
+    "responseLatency": "Response Latency",
+    "responseLatencyText": "Our average response time for new project inquiries is",
+    "responseLatencyHighlight": "under 4 hours",
+    "responseLatencySuffix": "during business cycles.",
+    "form": {
+      "title": "Project Inquiry",
+      "subtitle": "Securely transmit your project details to our strategy department.",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Name Surname",
+      "email": "Email Address",
+      "emailPlaceholder": "example@gmail.com",
+      "category": "Innovation Category",
+      "categories": {
+        "webApp": "Web App",
+        "mobile": "Mobile",
+        "aiSolution": "AI Solution",
+        "fullStrategy": "Full Strategy"
+      },
+      "message": "Message / Description",
+      "messagePlaceholder": "Tell us about your digital frontier...",
+      "submit": "Transmit Message"
+    },
+    "stats": {
+      "uptime": "RELIABILITY",
+      "activeProjects": "LIVE PROJECTS",
+      "clientRetention": "CLIENT TRUST",
+      "nodesWorldwide": "PARTNER NETWORK"
+    }
+  },
+  "projects": {
+    "badge": "Our Work",
+    "titleLine1": "Pioneering Digital",
+    "titleHighlight": "Excellence",
+    "subtitle": "Explore our curated gallery of software innovations, ranging from complex enterprise systems to intuitive consumer experiences, all crafted with precision and future-proof technology.",
+    "categories": {
+      "all": "All Projects",
+      "web": "Web Platforms",
+      "mobile": "Mobile Apps",
+      "ai": "AI & Data",
+      "branding": "Branding"
+    },
+    "showing": "Showing",
+    "project": "project",
+    "projects": "projects",
+    "scrollHint": "Scroll to explore",
+    "items": {
+      "nexgen": {
+        "title": "NexGen ERP",
+        "description": "A comprehensive cloud-based enterprise resource planning system with real-time analytics and workflow automation."
+      },
+      "lumina": {
+        "title": "Lumina Health",
+        "description": "Intuitive patient care and diagnostic tracking app designed for high-performance medical teams."
+      },
+      "aura": {
+        "title": "Aura Neural Engine",
+        "description": "Advanced machine learning infrastructure for automated visual quality control in manufacturing."
+      },
+      "vortex": {
+        "title": "Vortex Fintech",
+        "description": "Ultra-low latency trading dashboard featuring high-frequency data visualisation and risk management."
+      },
+      "skyline": {
+        "title": "Skyline Logistics",
+        "description": "Dynamic route optimisation and real-time fleet management tool for global distribution networks."
+      },
+      "quantum": {
+        "title": "Quantum Brand Identity",
+        "description": "A complete visual system and digital brand strategy for a cutting-edge quantum computing startup."
+      }
+    },
+    "cta": {
+      "title": "Have a visionary project in mind?",
+      "description": "We're ready to transform your complex challenges into elegant digital solutions. Let's collaborate to build the next frontier of your business.",
+      "startConversation": "Start a Conversation",
+      "downloadDeck": "Download Service Deck"
+    }
+  }
+}

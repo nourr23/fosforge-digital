@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "title": "FosForge Digital | Agence web, mobile et IA",
+    "description": "FosForge Digital conçoit des sites web haute performance, des applications mobiles et des solutions d'IA pour les entreprises ambitieuses. Forigeons votre prochain produit numérique.",
+    "keywords": "FosForge Digital, agence logicielle, développement web, applications mobiles, solutions IA, Next.js, transformation numérique"
+  },
+  "header": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "contact": "Contact",
+    "letsTalk": "Discutons"
+  },
+  "footer": {
+    "tagline": "Pionnier de la frontière numérique grâce au développement logiciel innovant et au design futuriste.",
+    "services": "Services",
+    "webDevelopment": "Développement Web",
+    "mobileApps": "Applications Mobiles",
+    "uiUxDesign": "Design UI/UX",
+    "aiSolutions": "Solutions IA",
+    "company": "Entreprise",
+    "about": "À propos",
+    "projects": "Projets",
+    "careers": "Carrières",
+    "contact": "Contact",
+    "connect": "Réseaux",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2026 FOSFORGE DIGITAL. Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "terms": "Conditions"
+  },
+  "home": {
+    "hero": {
+      "badge": "À l'avant-garde du numérique",
+      "titleLine1": "Construire l'avenir de",
+      "titleHighlight": "l'innovation numérique",
+      "description": "Fosforge Digital est une agence logicielle haute performance qui conçoit des expériences web futuristes, des applications mobiles robustes et des systèmes d'automatisation pilotés par l'IA.",
+      "getStarted": "Commencer",
+      "viewWork": "Voir nos réalisations",
+      "trustedBy": "Approuvé par des visionnaires mondiaux"
+    },
+    "about": {
+      "imageAlt": "Membre de l'équipe travaillant sur un ordinateur portable",
+      "innovationHub": "Hub d'innovation",
+      "certifiedExcellence": "Excellence certifiée",
+      "titleLine1": "Pionnier de la prochaine vague de",
+      "titleHighlight": "transformation numérique",
+      "description": "Nous ne faisons pas que coder ; nous architecturons des expériences. Notre équipe pluridisciplinaire combine expertise technique et réflexion stratégique en design pour créer des logiciels qui évoluent, s'adaptent et dominent.",
+      "features": {
+        "ai": "Optimisation des flux de travail intégrée à l'IA",
+        "infrastructure": "Infrastructure web et mobile à l'échelle mondiale",
+        "security": "Protocoles de sécurité numérique de niveau Fort-Knox"
+      }
+    },
+    "expertise": {
+      "title": "Notre expertise principale",
+      "subtitle": "Des solutions de pointe conçues pour propulser votre entreprise vers l'avenir.",
+      "services": {
+        "web": "Développement Web",
+        "mobile": "Applications Mobiles",
+        "uiux": "Stratégie UI/UX",
+        "ai": "IA & Automatisation",
+        "cloud": "Architecture Cloud",
+        "branding": "Branding & Croissance"
+      },
+      "description": "Des solutions numériques sur mesure conçues pour la performance, l'évolutivité et des expériences utilisateur élégantes."
+    },
+    "projects": {
+      "title": "Projets",
+      "createdIn": "Créé en {year}",
+      "website": "Site web",
+      "mobileApp": "Application mobile",
+      "viewAll": "Voir tous les projets"
+    },
+    "projectDetail": {
+      "back": "Retour aux projets",
+      "year": "Créé en {year}",
+      "yearLabel": "Année",
+      "technologies": "Technologies",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de données",
+      "gallery": "Galerie",
+      "viewWebsite": "Voir le site web",
+      "viewMobileApp": "Voir l'application mobile"
+    },
+    "stats": {
+      "projectsCompleted": "Projets livrés",
+      "clientSatisfaction": "Confiance de livraison",
+      "systemUptime": "Indice de fiabilité",
+      "globalPartners": "Réseau partenaire"
+    },
+    "cta": {
+      "titleLine1": "Prêt à concrétiser",
+      "titleLine2": "votre vision ?",
+      "description": "Contactez nos spécialistes de l'innovation dès aujourd'hui et construisons ensemble quelque chose d'extraordinaire.",
+      "button": "Lancer un projet"
+    }
+  },
+  "contact": {
+    "badge": "Ingénierie de contact",
+    "titleLine1": "Construisons la",
+    "titleHighlight": "prochaine génération",
+    "subtitle": "Prêt à transformer votre vision en réalité numérique ? Notre équipe d'innovateurs et d'ingénieurs est prête à transmettre vos idées en production.",
+    "connectionPoints": "Points de connexion",
+    "contactInfo": {
+      "email": { "label": "TRANSMISSION DIRECTE", "value": "contact@fosforge-digital.com" },
+      "phone": { "label": "LIEN VOCAL", "value": "+216 94 077 836" },
+      "chat": { "label": "CHAT CHIFFRÉ", "value": "@fosforge_digital" }
+    },
+    "globalNetwork": "Réseau mondial d'innovation",
+    "digitalChannels": "Canaux numériques",
+    "responseLatency": "Délai de réponse",
+    "responseLatencyText": "Notre temps de réponse moyen pour les nouvelles demandes de projet est de",
+    "responseLatencyHighlight": "moins de 4 heures",
+    "responseLatencySuffix": "pendant les cycles ouvrables.",
+    "form": {
+      "title": "Demande de projet",
+      "subtitle": "Transmettez en toute sécurité les détails de votre projet à notre département stratégie.",
+      "fullName": "Nom complet",
+      "fullNamePlaceholder": "Prénom Nom",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "exemple@gmail.com",
+      "category": "Catégorie d'innovation",
+      "categories": {
+        "webApp": "Application Web",
+        "mobile": "Mobile",
+        "aiSolution": "Solution IA",
+        "fullStrategy": "Stratégie complète"
+      },
+      "message": "Message / Description",
+      "messagePlaceholder": "Parlez-nous de votre frontière numérique...",
+      "submit": "Transmettre le message"
+    },
+    "stats": {
+      "uptime": "FIABILITÉ",
+      "activeProjects": "PROJETS EN COURS",
+      "clientRetention": "CONFIANCE CLIENT",
+      "nodesWorldwide": "RÉSEAU PARTENAIRE"
+    }
+  },
+  "projects": {
+    "badge": "Nos réalisations",
+    "titleLine1": "Excellence numérique",
+    "titleHighlight": "pionnière",
+    "subtitle": "Explorez notre galerie d'innovations logicielles, allant des systèmes d'entreprise complexes aux expériences utilisateur intuitives, toutes conçues avec précision et une technologie pérenne.",
+    "categories": {
+      "all": "Tous les projets",
+      "web": "Plateformes Web",
+      "mobile": "Applications Mobiles",
+      "ai": "IA & Données",
+      "branding": "Branding"
+    },
+    "showing": "Affichage de",
+    "project": "projet",
+    "projects": "projets",
+    "scrollHint": "Faites défiler pour explorer",
+    "items": {
+      "nexgen": {
+        "title": "NexGen ERP",
+        "description": "Un système complet de planification des ressources d'entreprise basé sur le cloud avec analyses en temps réel et automatisation des flux de travail."
+      },
+      "lumina": {
+        "title": "Lumina Health",
+        "description": "Application intuitive de suivi des soins aux patients et des diagnostics conçue pour les équipes médicales haute performance."
+      },
+      "aura": {
+        "title": "Aura Neural Engine",
+        "description": "Infrastructure d'apprentissage automatique avancée pour le contrôle qualité visuel automatisé en fabrication."
+      },
+      "vortex": {
+        "title": "Vortex Fintech",
+        "description": "Tableau de bord de trading à ultra-faible latence avec visualisation de données haute fréquence et gestion des risques."
+      },
+      "skyline": {
+        "title": "Skyline Logistics",
+        "description": "Outil d'optimisation dynamique des itinéraires et de gestion de flotte en temps réel pour les réseaux de distribution mondiaux."
+      },
+      "quantum": {
+        "title": "Quantum Brand Identity",
+        "description": "Un système visuel complet et une stratégie de marque numérique pour une startup d'informatique quantique de pointe."
+      }
+    },
+    "cta": {
+      "title": "Vous avez un projet visionnaire en tête ?",
+      "description": "Nous sommes prêts à transformer vos défis complexes en solutions numériques élégantes. Collaborons pour construire la prochaine frontière de votre entreprise.",
+      "startConversation": "Démarrer une conversation",
+      "downloadDeck": "Télécharger la plaquette"
+    }
+  }
+}
