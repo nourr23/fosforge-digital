@@ -98,7 +98,10 @@ function ProjectCard({
 
   const card = (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md hover:shadow-blue-100/60">
-      <div className="flex flex-1 gap-4 p-5 sm:p-6">
+      <Link
+        href={`/projects/${project.slug}`}
+        className="flex flex-1 gap-4 p-5 sm:p-6"
+      >
         <div className="min-w-0 flex-1">
           <h3 className="mb-1 text-lg font-bold leading-tight text-[#3b82f6] sm:text-xl">
             {title}
@@ -119,14 +122,15 @@ function ProjectCard({
               src={project.logo}
               alt={title}
               fill
+              unoptimized
               className="object-contain p-2"
               sizes="112px"
             />
           </div>
         ) : null}
-      </div>
+      </Link>
 
-      <div className="relative bg-[#3b82f6] px-5 py-5 text-center sm:px-6 sm:py-6">
+      <div className="relative flex items-center justify-center bg-[#3b82f6] px-5 py-5 text-center sm:px-6 sm:py-6">
         <div className="absolute right-4 top-4 flex items-center gap-1.5 text-white/90">
           {isMobile ? (
             <>
@@ -145,37 +149,28 @@ function ProjectCard({
           )}
         </div>
 
-        <p className="text-base font-bold text-white sm:text-lg">{platformLabel}</p>
-        {technologies ? (
-          <p className="mt-1 text-xs text-blue-100 sm:text-sm">({technologies})</p>
-        ) : null}
+        {link ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full rounded-md text-base font-bold text-white transition-opacity hover:opacity-80 sm:text-lg"
+          >
+            <span>{platformLabel}</span>
+            {technologies ? (
+              <span className="mt-1 block text-xs font-normal text-blue-100 sm:text-sm">
+                ({technologies})
+              </span>
+            ) : null}
+          </a>
+        ) : (
+          <span className="text-base font-bold text-white sm:text-lg">{platformLabel}</span>
+        )}
       </div>
     </article>
   );
 
-  if (link) {
-    const isExternal = link.startsWith("http");
-    if (isExternal) {
-      return (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block h-full transition-transform duration-200 hover:-translate-y-1"
-        >
-          {card}
-        </a>
-      );
-    }
-
-    return (
-      <Link href={link} className="block h-full transition-transform duration-200 hover:-translate-y-1">
-        {card}
-      </Link>
-    );
-  }
-
-  return card;
+  return <div className="block h-full transition-transform duration-200 hover:-translate-y-1">{card}</div>;
 }
 
 const FALLBACK_PROJECTS: Project[] = [
@@ -369,20 +364,20 @@ export async function ProjectsSection() {
   const projects =
     fetched.length > 0
       ? TOP_PROJECT_SLUGS.map((slug) => fetched.find((project) => project.slug === slug)).filter(
-          Boolean
+          (project): project is Project => project !== undefined
         )
       : FALLBACK_PROJECTS.filter((project) => TOP_PROJECT_SLUGS.includes(project.slug));
 
   return (
     <section className="bg-white py-20 md:py-24">
-      <div className={`${LANDING_WIDE} flex flex-col`}>
+      <div className={LANDING_WIDE}>
         <h2 className="mb-12 text-4xl font-black uppercase tracking-[-0.04em] text-[#111827] md:mb-16 md:text-5xl">
           <span className="bg-gradient-to-r from-[#3b82f6] via-[#60a5fa] to-[#22d3ee] bg-clip-text text-transparent">
             {t("title")}
           </span>
         </h2>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="grid auto-rows-max grid-cols-1 content-start items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}

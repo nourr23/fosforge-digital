@@ -35,18 +35,22 @@ export default function Header() {
       }`}
     >
       <div className="w-full max-w-6xl rounded-2xl border border-gray-100 bg-white/95 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-md">
-        <nav className="relative flex items-center justify-between gap-3 px-5 py-3.5 md:gap-6 md:px-8 md:py-4">
-          <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2.5 no-underline md:gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#3b82f6] text-sm font-black text-white shadow-sm md:h-11 md:w-11 md:text-base">
-              FF
-            </span>
-            <span className="min-w-0 text-[10px] font-black uppercase leading-none tracking-tight sm:text-xs md:text-base lg:text-lg">
-              <span className="text-[#3b82f6]">FOSFORGE</span>{" "}
-              <span className="text-[#818cf8]">DIGITAL</span>
-            </span>
+        <nav className="relative flex items-center justify-between gap-3 px-4 py-3.5 sm:px-5 lg:gap-6 lg:px-8 lg:py-4">
+          <Link href="/" className="relative z-10 flex shrink-0 items-center leading-none no-underline">
+            <picture>
+              <source media="(min-width: 1024px)" srcSet="/logo.png" />
+              <img
+                src="/mobile-logo.png"
+                alt="FosForge Digital"
+                width={462}
+                height={428}
+                className="h-10 w-auto"
+                style={{ width: "auto" }}
+              />
+            </picture>
           </Link>
 
-          <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-10 md:flex">
+          <div className="absolute left-1/2 top-1/2 z-0 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-8 lg:flex xl:gap-10">
             {navLinks.map((link) => {
               const active =
                 pathname === link.href ||
@@ -65,18 +69,18 @@ export default function Header() {
             })}
           </div>
 
-          <div className="flex shrink-0 items-center gap-2 md:gap-3">
+          <div className="relative z-10 flex shrink-0 items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
             <Link
               href="/contact"
-              className="shrink-0 rounded-full bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-5 py-2.5 text-xs font-bold text-white shadow-md shadow-blue-500/25 transition-opacity hover:opacity-95 no-underline md:px-7 md:py-3 md:text-sm"
+              className="shrink-0 rounded-full bg-gradient-to-r from-[#3b82f6] to-[#6366f1] px-4 py-2.5 text-xs font-bold text-white shadow-md shadow-blue-500/25 transition-opacity hover:opacity-95 no-underline sm:px-5 lg:px-7 lg:py-3 lg:text-sm"
             >
               {t("letsTalk")}
             </Link>
           </div>
         </nav>
 
-        <div className="flex justify-center gap-8 border-t border-gray-100 px-4 py-2 md:hidden">
+        <div className="flex justify-center gap-8 border-t border-gray-100 px-4 py-2 lg:hidden">
           {navLinks.map((link) => {
             const active =
               pathname === link.href ||

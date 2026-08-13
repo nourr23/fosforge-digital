@@ -1,7 +1,8 @@
 {
   "metadata": {
-    "title": "FosForge Digital",
-    "description": "Agence logicielle moderne et innovante"
+    "title": "FosForge Digital | Agence web, mobile et IA",
+    "description": "FosForge Digital conçoit des sites web haute performance, des applications mobiles et des solutions d'IA pour les entreprises ambitieuses. Forigeons votre prochain produit numérique.",
+    "keywords": "FosForge Digital, agence logicielle, développement web, applications mobiles, solutions IA, Next.js, transformation numérique"
   },
   "header": {
     "home": "Accueil",
@@ -71,6 +72,18 @@
       "mobileApp": "Application mobile",
       "viewAll": "Voir tous les projets"
     },
+    "projectDetail": {
+      "back": "Retour aux projets",
+      "year": "Créé en {year}",
+      "yearLabel": "Année",
+      "technologies": "Technologies",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de données",
+      "gallery": "Galerie",
+      "viewWebsite": "Voir le site web",
+      "viewMobileApp": "Voir l'application mobile"
+    },
     "stats": {
       "projectsCompleted": "Projets livrés",
       "clientSatisfaction": "Confiance de livraison",
@@ -91,9 +104,8 @@
     "subtitle": "Prêt à transformer votre vision en réalité numérique ? Notre équipe d'innovateurs et d'ingénieurs est prête à transmettre vos idées en production.",
     "connectionPoints": "Points de connexion",
     "contactInfo": {
-      "email": { "label": "TRANSMISSION DIRECTE", "value": "hello@fosforge.digital" },
-      "phone": { "label": "LIEN VOCAL", "value": "+216 123 456 789" },
-      "location": { "label": "NŒUD GLOBAL", "value": "Silicon Valley, CA" },
+      "email": { "label": "TRANSMISSION DIRECTE", "value": "contact@fosforge-digital.com" },
+      "phone": { "label": "LIEN VOCAL", "value": "+216 94 077 836" },
       "chat": { "label": "CHAT CHIFFRÉ", "value": "@fosforge_digital" }
     },
     "globalNetwork": "Réseau mondial d'innovation",

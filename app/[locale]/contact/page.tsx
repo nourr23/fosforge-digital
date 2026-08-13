@@ -1,8 +1,30 @@
+import type { Metadata } from "next";
 import { ContactInquiryForm } from "@/components/contact/ContactInquiryForm";
 import { getProjects } from "@/lib/projects";
 import { getTranslations } from "next-intl/server";
 
-const CONTACT_INFO_KEYS = ["email", "phone", "location", "chat"] as const;
+const CONTACT_INFO_KEYS = ["email", "phone", "chat"] as const;
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+
+  return {
+    title: `${t("titleLine1")} ${t("titleHighlight")}`,
+    description: t("subtitle"),
+    alternates: {
+      canonical: `/${locale}/contact`,
+      languages: {
+        en: "/en/contact",
+        fr: "/fr/contact",
+      },
+    },
+  };
+}
 
 export default async function ContactPage() {
   const t = await getTranslations("contact");
