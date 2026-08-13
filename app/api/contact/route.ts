@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { supabase, supabaseAdmin } from "@/lib/supabase";
 
 export async function POST(request: Request) {
   try {
@@ -19,7 +19,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
 
-    const { error } = await supabase.from("contact_inquiries").insert({
+    const client = supabaseAdmin ?? supabase;
+    const { error } = await client.from("contact_inquiries").insert({
       full_name: fullName,
       email,
       categories,
@@ -28,6 +29,17 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Error saving contact inquiry:", error);
+
+      if (error.code === "42501") {
+        return NextResponse.json(
+          {
+            error:
+              "Supabase row-level security is blocking the insert. Create a public insert policy for contact_inquiries or add SUPABASE_SERVICE_ROLE_KEY.",
+          },
+          { status: 500 }
+        );
+      }
+
       return NextResponse.json({ error: "Could not save inquiry" }, { status: 500 });
     }
 
