@@ -90,6 +90,28 @@
       "systemUptime": "Reliability Score",
       "globalPartners": "Partner Network"
     },
+    "testimonials": {
+      "badge": "Testimonials",
+      "titleLine1": "What our",
+      "titleHighlight": "clients say",
+      "items": {
+        "denis": {
+          "role": "Chief Growth Officer (CGO)",
+          "project": "La Fayette Education & Spotbulle",
+          "quote": "I want to highlight the quality of Nour Jouini's work on the recent creation of our website. His speed of execution was remarkable: deadlines were met without ever sacrificing the quality of the final result. Beyond the technical side, Nour showed a strong understanding of the project's challenges, translating our sometimes loosely formalized needs into concrete and relevant solutions. His ease of communication greatly streamlined exchanges throughout the project, with clear, responsive, and always constructive feedback. An effective and pleasant collaboration, which I wholeheartedly recommend."
+        },
+        "olivier": {
+          "role": "Chairman & CEO",
+          "project": "La Fayette Education Group SA",
+          "quote": "FosForge Digital accompanied La Fayette Education in the design of its website. The project was carried out with professionalism, clear communication, and a real understanding of the needs of an educational group. The final result is modern, fluid, and perfectly aligned with our image. I highly recommend FosForge Digital."
+        },
+        "estelle": {
+          "role": "Coach and French teacher",
+          "project": "Spotbulle and Genup",
+          "quote": "Nour supported me reactively for several months on my projects and knew how to support my vision technically. Reliable, rigorous, and technical, he not only brought his professionalism but also adapted his working methods to my educational environment. I warmly recommend him."
+        }
+      }
+    },
     "cta": {
       "titleLine1": "Ready to Manifest",
       "titleLine2": "Your Vision?",
