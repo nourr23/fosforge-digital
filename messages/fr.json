@@ -90,6 +90,28 @@
       "systemUptime": "Indice de fiabilité",
       "globalPartners": "Réseau partenaire"
     },
+    "testimonials": {
+      "badge": "Témoignages",
+      "titleLine1": "Ce que nos",
+      "titleHighlight": "clients disent",
+      "items": {
+        "denis": {
+          "role": "Chief Growth Officer (CGO)",
+          "project": "La Fayette Education et Spotbulle",
+          "quote": "Je tiens à souligner la qualité du travail de Nour Jouini sur la création récente de notre site web. Sa rapidité d'exécution a été remarquable : les délais ont été tenus sans jamais sacrifier la qualité du rendu final. Au-delà de la technique, Nour a fait preuve d'une compréhension fine des enjeux du projet, sachant traduire nos besoins parfois peu formalisés en solutions concrètes et pertinentes. Sa facilité de communication a grandement fluidifié les échanges tout au long du projet, avec des retours clairs, réactifs et toujours constructifs. Une collaboration efficace et agréable, que je recommande volontiers."
+        },
+        "olivier": {
+          "role": "Chairman & CEO",
+          "project": "La Fayette Education Group SA",
+          "quote": "FosForge Digital a accompagné La Fayette Education dans la conception de son site web. Le projet a été mené avec professionnalisme, une communication claire et une réelle compréhension des besoins d’un groupe éducatif. Le résultat final est moderne, fluide et parfaitement aligné avec notre image. Je recommande vivement FosForge Digital."
+        },
+        "estelle": {
+          "role": "Coach et professeure de français",
+          "project": "Spotbulle et Genup",
+          "quote": "Nour m'a accompagnée avec réactivité durant plusieurs mois sur mes projets et a su accompagner techniquement ma vision. Fiable, rigoureux et technique, il a non seulement apporté son professionnalisme mais aussi adapter ses méthodes de travail à mon environnement éducatif. Je le recommande chaleureusement."
+        }
+      }
+    },
     "cta": {
       "titleLine1": "Prêt à concrétiser",
       "titleLine2": "votre vision ?",
